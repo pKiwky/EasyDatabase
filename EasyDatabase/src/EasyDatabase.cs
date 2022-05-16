@@ -1,9 +1,9 @@
 ﻿using EasyDatabase.Interfaces;
 using EasyDatabase.Models;
-using MySqlConnector;
+using MySql.Data.MySqlClient;
 using System.Data.Common;
 
-namespace EasyDatabase.MySQL {
+namespace EasyDatabase {
 
 	public class EasyDatabaseMySQL : IEasyDatabase {
 		private string _connectionString;
@@ -24,8 +24,8 @@ namespace EasyDatabase.MySQL {
 			return string.Format(new System.Globalization.CultureInfo("en-US"), query, parameters);
 		}
 
-		public async Task<QueryResult> Query(string query, params object[] parameters) {
-			QueryResult result = null;
+		public async Task<CMySQLResult> Query(string query, params object[] parameters) {
+			CMySQLResult result = null;
 
 			query = EscapeQuery(query, parameters);
 
@@ -36,10 +36,10 @@ namespace EasyDatabase.MySQL {
 					using (MySqlCommand command = new MySqlCommand(query, conn)) {
 						if (query.StartsWith("DELETE") || query.StartsWith("UPDATE")) {
 							int numRowsModified = await command.ExecuteNonQueryAsync();
-							//result = new CMySQLResult(numRowsModified);
+							result = new CMySQLResult(numRowsModified);
 						} else {
 							using (DbDataReader reader = await command.ExecuteReaderAsync()) {
-								result = new QueryResult(reader, (ulong)command.LastInsertedId);
+								result = new CMySQLResult(reader, (ulong)command.LastInsertedId);
 							}
 						}
 					}

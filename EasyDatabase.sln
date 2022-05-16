@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyDatabase", "EasyDatabas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyDatabase.ConsoleApp", "EasyDatabase.ConsoleApp\EasyDatabase.ConsoleApp.csproj", "{C4CA383C-C258-4267-AC4D-8462BA151E25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyDatabase.MySQL", "EasyDatabase.MySQL\EasyDatabase.MySQL.csproj", "{9B0CAAB8-E323-48DE-918F-223BA41DF0C3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{C4CA383C-C258-4267-AC4D-8462BA151E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4CA383C-C258-4267-AC4D-8462BA151E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4CA383C-C258-4267-AC4D-8462BA151E25}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B0CAAB8-E323-48DE-918F-223BA41DF0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B0CAAB8-E323-48DE-918F-223BA41DF0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B0CAAB8-E323-48DE-918F-223BA41DF0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B0CAAB8-E323-48DE-918F-223BA41DF0C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
