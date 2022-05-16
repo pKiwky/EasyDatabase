@@ -7,4 +7,6 @@ if (query == null) {
 	return;
 }
 
-Console.WriteLine(query.GetRow(0)["id"]);
+foreach(var row in query.GetRows()) {
+	Console.WriteLine(row["description"]);
+}

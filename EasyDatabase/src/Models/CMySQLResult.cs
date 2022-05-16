@@ -29,8 +29,7 @@ namespace EasyDatabase.Models {
 				_rows.Add(row);
 			}
 
-			reader.Close();
-			_ = reader.DisposeAsync();
+			//reader.Close();
 
 			_insertId = insertId;
 			_rowsAffected = 0;
@@ -39,24 +38,32 @@ namespace EasyDatabase.Models {
 		/// <summary>
 		/// Get total affected rows by this query.
 		/// </summary>
-		public int RowsAffected() => _rowsAffected;
+		public int RowsAffected() {
+			return _rowsAffected;
+		}
 
 		/// <summary>
 		/// Get inserted id by this query.
 		/// </summary>
-		public ulong LastInsertedId() => _insertId;
+		public ulong LastInsertedId() {
+			return _insertId;
+		}
 
 		/// <summary>
 		/// Get row by id drom rows list.
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public CMySQLRow GetRow(int id) => _rows[id];
+		public CMySQLRow GetRow(int id) {
+			return _rows[id];
+		}
 
 		/// <summary>
 		/// Get a list with all rows fetched.
 		/// </summary>
-		public IReadOnlyList<CMySQLRow> GetAllRows() => _rows;
+		public IReadOnlyList<CMySQLRow> GetRows() {
+			return _rows;
+		}
 	}
 
 }
