@@ -35,6 +35,28 @@ namespace EasyDatabase.Models {
 			_insertId = insertId;
 			_rowsAffected = 0;
 		}
+
+		/// <summary>
+		/// Get total affected rows by this query.
+		/// </summary>
+		public int RowsAffected() => _rowsAffected;
+
+		/// <summary>
+		/// Get inserted id by this query.
+		/// </summary>
+		public ulong LastInsertedId() => _insertId;
+
+		/// <summary>
+		/// Get row by id drom rows list.
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
+		public CMySQLRow GetRow(int id) => _rows[id];
+
+		/// <summary>
+		/// Get a list with all rows fetched.
+		/// </summary>
+		public IReadOnlyList<CMySQLRow> GetAllRows() => _rows;
 	}
 
 }
